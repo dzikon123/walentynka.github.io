@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walentynka!!</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .big-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  .button-container {
+    margin-top: 20px;
+  }
+  .button {
+    display: inline-block;
+    padding: 20px 40px; /* Adjusted padding for bigger buttons */
+    margin: 20px;
+    font-size: 36px; /* Adjusted font size for bigger text */
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: color 0.3s; /* Smooth transition for text color change */
+  }
+  .button-green {
+    background-color: rgb(6, 251, 6);
+    color: #fff;
+    text-shadow: 0 0 3px black;  
+                  
+  }
+  .button-green:hover {
+    background-color: darkgreen;
+  }
+  .button-red {
+    background-color: red;
+    color: #fff;
+    text-shadow: 0 0 3px black;  
+                  
+  }
+  .button-red:hover {
+    background-color: darkred;
+    color: #fff; /* Change text color to white when hovering over the red button */
+  }
+  .gif-container {
+    display: none; /* Initially hide the GIF container */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .gif {
+    margin: auto;
+  }
+  
+  .gif-container.bottom-right {
+    display: none;
+    position: fixed;
+    top: 80%;
+    right: 90%;
+    left: 6%;
+  }
+  .gif-container.bottom-left {
+    display: none;
+    position: fixed;
+    top: 82%;
+    left: 80%;
+    right: 15%;
+  }
+  .image-container {
+    display: none; /* Initially hide the image containers */
+    position: fixed;
+    bottom: 0;
+  }
+  .image-container.bottom-right {
+    position: fixed;
+    top: 15%;
+    left: 5%;
+  }
+  .image-container.bottom-left {
+    position: fixed;
+    top: 15%;
+    left: 70%;
+  }
+  .image {
+    margin: auto;
+    
+  }
+</style>
+</head>
+<body>
+  <div class="big-text" id="big-text">Czy zostaniesz moją walentynką??</div>
+  <img id="valentine-image" src="C:\Users\Paweł\Desktop\cat_flower-removebg-preview.png" alt="Valentine's Day" width="400" height="300">
+  <div class="button-container">
+    <button class="button button-green" onclick="showGif()">TAK</button>
+    <button class="button button-red" onclick="window.location.reload();">NIE</button>
+  </div>
+  <div class="gif-container main">
+    <img class="gif" src="C:\Users\Paweł\Downloads\catgif.gif" alt="GIF" width="300">
+  </div>
+  <div class="gif-container bottom-right">
+    <img class="gif" src="C:\Users\Paweł\Downloads\confetti-glitter.gif" alt="GIF" width="250">
+  </div>
+  <div class="gif-container bottom-left">
+    <img class="gif" src="C:\Users\Paweł\Downloads\confetti-45.gif" alt="GIF" width="250">
+  </div>
+  <div class="image-container bottom-right">
+    <img class="image" src="C:\Users\Paweł\Downloads\roses-removebg-preview.png" alt="Image" width="350">
+  </div>
+  <div class="image-container bottom-left">
+    <img class="image" src="C:\Users\Paweł\Downloads\heart-removebg-preview.png" alt="Image" width="450">
+  </div>
+  
+  <script>
+    function showGif() {
+      var mainGifContainer = document.querySelector('.gif-container.main');
+      var bottomRightGifContainer = document.querySelector('.gif-container.bottom-right');
+      var bottomLeftGifContainer = document.querySelector('.gif-container.bottom-left');
+      var bottomRightImageContainer = document.querySelector('.image-container.bottom-right');
+      var bottomLeftImageContainer = document.querySelector('.image-container.bottom-left');
+      var buttons = document.querySelectorAll('.button');
+      var image = document.getElementById('valentine-image');
+      var bigText = document.getElementById('big-text');
+      
+      mainGifContainer.style.display = 'block'; // Display the main GIF container
+      bottomRightGifContainer.style.display = 'block'; // Display the bottom-right GIF container
+      bottomLeftGifContainer.style.display = 'block'; // Display the bottom-left GIF container
+      bottomRightImageContainer.style.display = 'block'; // Display the bottom-right image container
+      bottomLeftImageContainer.style.display = 'block'; // Display the bottom-left image container
+      buttons.forEach(button => button.style.display = 'none'); // Hide the buttons
+      image.style.display = 'none'; // Hide the image
+      bigText.textContent = 'YUUUUUPI'; // Change the big text content
+      bigText.style.fontSize = '60px';
+    }
+  </script>
+</body>
+</html>
